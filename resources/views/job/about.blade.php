@@ -1,4 +1,4 @@
 @extends('components.layout')
 @section('content')
-<h2>Text</h2>
+About page
 @endsection
