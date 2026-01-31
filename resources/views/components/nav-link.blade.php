@@ -1,3 +1,4 @@
+@props(['active' => false])
 @php
     $curr = "bg-gray-900 text-white";
     $default = "text-gray-300 hover:bg-white/5 hover:text-white";
