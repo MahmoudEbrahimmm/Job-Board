@@ -9,4 +9,7 @@ class Post extends Model
     protected $fillable = [
         'title', 'body' , 'published','author'
     ];
+    public function commits(){
+        return $this->hasMany(Commit::class);
+    }
 }

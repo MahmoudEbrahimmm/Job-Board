@@ -33,6 +33,7 @@
               <x-nav-link href="{{ route('about') }}" :active="request()->is('about')">About</x-nav-link>
               <x-nav-link href="{{ route('contact') }}" :active="request()->is('contact')">Contacts</x-nav-link>
               <x-nav-link href="{{ route('posts') }}" :active="request()->is('blog')">Posts</x-nav-link>
+              <x-nav-link href="{{ route('commit') }}" :active="request()->is('commit')">Commits</x-nav-link>
 
             </div>
           </div>
