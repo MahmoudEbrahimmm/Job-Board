@@ -12,4 +12,7 @@ class Post extends Model
     public function commits(){
         return $this->hasMany(Commit::class);
     }
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
 }
