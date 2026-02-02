@@ -28,8 +28,9 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <h5 class="m-auto mt-2 w-50">{{ $posts->links() }}</h5>
         </div>
     </div>
 </div>
-
 @endsection

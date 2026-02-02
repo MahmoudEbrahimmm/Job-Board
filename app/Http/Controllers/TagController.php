@@ -8,12 +8,12 @@ class TagController extends Controller
 {
     public function index()
     {
-        $tags = Tag::all();
+        $tags = Tag::cursorPaginate(3);
         return view('tags.index', compact('tags'));
     }
     function create(){
         $tags = Tag::create([
-           'title' => '',
+           'title' => 'Test',
         ]);
         return redirect('/tags');
     }

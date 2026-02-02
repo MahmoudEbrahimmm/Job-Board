@@ -21,6 +21,7 @@
                     @endforeach
                 </tbody>
             </table>
+            <h5 class="m-auto mt-2 w-50">{{ $tags->links() }}</h5>
         </div>
     </div>
 </div>
