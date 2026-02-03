@@ -11,11 +11,8 @@ Route::get('/',[JobController::class,'welcome'])->name('home');
 Route::get('/about',[JobController::class,'about'])->name('about');
 Route::get('/contact',[JobController::class,'contact'])->name('contact');
 
-Route::get('/blog',[PostController::class,'index'])->name('posts');
-Route::get('/blog/create',[PostController::class,'create']);
+Route::resource('posts', PostController::class);
 
-Route::get('/commit',[CommitController::class,'index'])->name('commit');
-Route::get('/commit/create',[CommitController::class,'create']);
+Route::resource('commit', CommitController::class);
 
-Route::get('/tags',[TagController::class,'index'])->name('tags');
-Route::get('/tags/create',[TagController::class,'create']);
+Route::resource('tags', TagController::class);

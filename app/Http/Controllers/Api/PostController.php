@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -13,17 +14,11 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::cursorPaginate(2);
-        return view('posts.index', compact('posts'));
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        Post::factory(100)->create();
-
-        return redirect('/posts');
+        return response()->json([
+            'status' => true,
+            'data' => $posts,
+        ]);
     }
 
     /**
@@ -31,7 +26,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Post::factory(1)->create();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Posts created successfully',
+        ], 201);
     }
 
     /**
@@ -40,15 +40,11 @@ class PostController extends Controller
     public function show(string $id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.show', compact('post'));
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        return response()->json([
+            'status' => true,
+            'data' => $post,
+        ]);
     }
 
     /**
@@ -62,10 +58,14 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function delete(string $id)
+    public function destroy(string $id)
     {
         $post = Post::findOrFail($id);
         $post->delete();
-        return redirect('posts');
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Post deleted successfully',
+        ]);
     }
 }

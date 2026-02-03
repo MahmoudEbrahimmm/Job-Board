@@ -32,9 +32,9 @@
               <x-nav-link href="{{ route('home') }}" :active="request()->is('/')" aria-current="page">Dashboard</x-nav-link>
               <x-nav-link href="{{ route('about') }}" :active="request()->is('about')">About</x-nav-link>
               <x-nav-link href="{{ route('contact') }}" :active="request()->is('contact')">Contacts</x-nav-link>
-              <x-nav-link href="{{ route('posts') }}" :active="request()->is('blog')">Posts</x-nav-link>
-              <x-nav-link href="{{ route('commit') }}" :active="request()->is('commit')">Commits</x-nav-link>
-              <x-nav-link href="{{ route('tags') }}" :active="request()->is('tags')">Tags</x-nav-link>
+              <x-nav-link href="{{ route('posts.index') }}" :active="request()->is('posts')">Posts</x-nav-link>
+              <x-nav-link href="{{ route('commit.index') }}" :active="request()->is('commit')">Commits</x-nav-link>
+              <x-nav-link href="{{ route('tags.index') }}" :active="request()->is('tags')">Tags</x-nav-link>
 
             </div>
           </div>
